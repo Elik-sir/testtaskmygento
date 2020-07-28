@@ -23,7 +23,7 @@ const ContainerText = styled.div`
   }
 `;
 const Text = styled.div`
-  font-size: ${(props) => (props.size ? '1em' : '1.5em')};
+  font-size: ${(props) => (props.matches ? '1em' : '1.5em')};
   color: #202020;
   opacity: 0.8;
   line-height: 30px;
@@ -47,7 +47,7 @@ const Title = styled.p`
   font-weight: 370;
   text-transform: uppercase;
   margin: 40px 0;
-  font-size: ${(props) => (props.size ? '30px' : '60px')};
+  font-size: ${(props) => (props.matches ? '30px' : '60px')};
   letter-spacing: 4px;
   @media (max-width: 768px) {
     margin: 20px 0;
@@ -62,8 +62,8 @@ const AboutMe = () => {
       </WrapperImage>
 
       <ContainerText>
-        <Title size={matches}>About me</Title>
-        <Text style={{ marginBottom: '20px' }} size={matches}>
+        <Title matches={matches}>About me</Title>
+        <Text style={{ marginBottom: '20px' }} matches={matches}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut

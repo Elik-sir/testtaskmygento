@@ -10,7 +10,7 @@ const Backgroung = styled.div`
   background-position: center;
   background-size: cover;
   width: auto;
-  height: ${(props) => (props.size ? '30vh' : '100vh')};
+  height: ${(props) => (props.matches ? '30vh' : '100vh')};
 `;
 
 const Header = () => {
@@ -27,7 +27,7 @@ const Header = () => {
   }, []);
   const matches = useMediaQuery('only screen and (max-width: 500px)');
   return (
-    <Backgroung ref={ref} size={matches}>
+    <Backgroung ref={ref} matches={matches}>
       {matches ? (
         <div style={{ width: '92px' }}>
           <MobileMenu
