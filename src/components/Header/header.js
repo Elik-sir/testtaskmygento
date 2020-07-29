@@ -1,18 +1,9 @@
 import React, { useEffect, useState, useRef } from 'react';
-import BackgroungImage from '../../assets/img/background.png';
 import Menu from './menu';
-import styled from 'styled-components';
 import { useMediaQuery } from '@react-hook/media-query';
 import { ReactComponent as DoubleArrow } from '../../assets/img/DoubleArrow.svg';
 import { ReactComponent as MobileMenu } from '../../assets/img/MENU.svg';
-const Backgroung = styled.div`
-  background: url(${BackgroungImage}) no-repeat;
-  background-position: center;
-  background-size: cover;
-  width: auto;
-  height: ${(props) => (props.matches ? '30vh' : '100vh')};
-`;
-
+import { Backgroung, WrapperDoubleArrow, TextScrollDown } from './styles';
 const Header = () => {
   const ref = useRef(null);
   const [inHeader, setInHeader] = useState(true);
@@ -38,25 +29,10 @@ const Header = () => {
       ) : (
         <>
           <Menu color={'#f1f1f1'} header={inHeader} />
-          <div
-            style={{
-              position: 'absolute',
-              bottom: '0',
-              left: ' 50%',
-              transform: 'translate(-50%, -50%)',
-            }}
-          >
-            <p
-              style={{
-                textTransform: 'uppercase',
-                color: 'white',
-                width: 'auto',
-              }}
-            >
-              scroll down to see more
-            </p>
+          <WrapperDoubleArrow>
+            <TextScrollDown>scroll down to see more</TextScrollDown>
             <DoubleArrow />
-          </div>
+          </WrapperDoubleArrow>
         </>
       )}
     </Backgroung>
